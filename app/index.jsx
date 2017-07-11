@@ -8,7 +8,7 @@ const store = configureStore();
 
 import RouteMap from './router/routeMap'
 
-import './static/css/common.less';
+import './style/css/common.less';
 
 render(
     <Provider store={store}>
