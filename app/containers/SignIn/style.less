@@ -3,7 +3,7 @@
   height: 100%;
   z-index: 99;
   position: absolute;
-  background: #fff url(./images/loginbottom.jpg) no-repeat bottom center;
+  background: #fff url(images/loginbottom.jpg) no-repeat bottom center;
   background-size: 100% auto;
 
   .loginbox {
@@ -13,14 +13,16 @@
     left: 50%;
     margin-left: -135px;
   }
+  .loginbox input {width: 156px; background: none; border: 2px solid #d6c4a7; height: 20px; line-height: 20px; color: #d6c7a3; border-radius: 22px;padding: 10px 55px; font-size: 16px; background: #fff;}
+
   .loginbox .phone {
-    background-image: url(./images/shouji.png);
+    background-image: url(images/shouji.png);
     background-repeat: no-repeat;
     background-size:18px 22px;
     background-position: 25px center;
   }
   .loginbox .password {
-    background-image: url(./images/mima.png);
+    background-image: url(images/mima.png);
     background-repeat: no-repeat;
     background-size:18px 22px;
     background-position: 25px center;
@@ -29,16 +31,35 @@
   .inputtype {
     position: relative;
     margin-bottom: 15px;
-    opacity: 0;
-    -webkit-transform:scale(0.5,0.5);
-    -moz-transform:scale(0.5,0.5);
-    -ms-transform:scale(0.5,0.5);
-    transform:scale(0.5,0.5);
-    opacity: 0;
   }
 
   .lefts {
-    left: -250px;
+    //left: -250px;
+  }
+  .rights {
+    //right: -250px;
+  }
+
+  .yanjing {
+    right: 20px;
+    position: absolute;
+    width: 27px;
+    height: 20px;
+    background: url(images/yanjing.png) no-repeat;
+    background-size: 27px 20px;
+    top: 12px;
+  }
+
+  .logonbottom {
+    color: #fff;
+    font-size: 18px;
+    background: #ff9f23;
+    text-align: center;
+    height: 42px;
+    display: block;
+    line-height: 42px;
+    width: 270px;
+    border-radius: 42px;
   }
 
 }
