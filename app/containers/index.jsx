@@ -29,7 +29,7 @@ class App extends React.Component {
         //获取位置信息
         let cityName = localStore.getItem(CITYNAME);
         if(cityName == null){
-            cityName = '深圳';
+            cityName = '登录';
         }
         this.props.userinfoActions.update({
             cityName: cityName
@@ -42,7 +42,9 @@ class App extends React.Component {
 
 //-------------------redux react 绑定--------------------
 function mapStateToProps(state){
-    return {};
+    return {
+
+    };
 }
 
 function mapDispatchToProps(dispatch){

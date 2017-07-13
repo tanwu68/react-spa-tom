@@ -7,9 +7,11 @@ class Detail extends React.Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
     render() {
+        const id = this.props.params.id;
         return (
             <div>
-                <h1>Detail</h1>
+                <h1>Detail pages...............</h1><br/>
+                <p>id的值为：{id}</p>
             </div>
         )
     }

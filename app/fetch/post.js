@@ -1,5 +1,5 @@
-import 'whatwg-fetch'
-import 'es6-promise'
+import 'whatwg-fetch';
+import 'es6-promise';
 
 // 将对象拼接成 key1=val1&key2=val2&key3=val3 的字符串形式
 function obj2params(obj) {
@@ -23,9 +23,12 @@ export function post(url, paramsObj) {
         credentials: 'include',
         headers: {
             'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-Requested-With': 'XMLHttpRequest'
         },
         body: obj2params(paramsObj)
+    }).then(resp => {
+        return resp.json();
     });
 
     return result;
