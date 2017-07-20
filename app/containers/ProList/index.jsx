@@ -20,7 +20,6 @@ class ProList extends React.Component {
             <div id="container">
                 <div className="tabC">
                     <div className="tabTitle setOn" id="dcTab">定期理财<em id="regularCount"></em></div>
-                    <div className="tabTitle" id="zqTab">债权转让<em id="creditorCount"></em></div>
                 </div>
                 <div className="warpbox touziliebiao">
                     <div className="pdbox" data-view="proList">
@@ -34,7 +33,7 @@ class ProList extends React.Component {
     componentDidMount(){
         var param_data = {
             pageNum: 1,
-            pageSize: 8,
+            pageSize: 100,
             type: "wap"
         };
         get('/api/product/wap/list',param_data).then(ret => {
