@@ -349,24 +349,30 @@
 //console.log(obj.z);
 
 // Object.getPrototypeOf()
+//该方法与Object.setPrototypeOf()方法配套，用于读取一个对象的原型对象
+//Object.getPrototypeOf(obj);
+//例子
+//function Rectangle(){
+//    //...
+//}
+//var rec = new Rectangle();
+//console.log(Object.getPrototypeOf(rec) === Rectangle.prototype);
+//Object.setPrototypeOf(rec, Object.prototype);
+//console.log(Object.getPrototypeOf(rec) === Rectangle.prototype);
 
+//如果参数不是对象，会被自动转为对象
+//console.log(Object.getPrototypeOf(1));
+//console.log(Object.getPrototypeOf('foo'));
+//console.log(Object.getPrototypeOf(true));
+//console.log(Object.getPrototypeOf(1) === Number.prototype);
+//console.log(Object.getPrototypeOf('foo') === String.prototype);
+//console.log(Object.getPrototypeOf(true) === Boolean.prototype);
 
+//如果参数是undefined 和 null，它们无法转为对象，所以会报错
+//console.log(Object.getPrototypeOf(null));
+//console.log(Object.getPrototypeOf(undefined));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Object.keys()、Object.values()、Object.entries()-------------------------------×------------------------------------
 
 
 
