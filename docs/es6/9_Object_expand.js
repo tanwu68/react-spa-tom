@@ -373,6 +373,106 @@
 //console.log(Object.getPrototypeOf(undefined));
 
 // Object.keys()、Object.values()、Object.entries()-------------------------------×------------------------------------
+//ES5 引入了Object.keys方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名
+//var obj = {foo: 'bar', baz: 42};
+//console.log(Object.keys(obj));
+//ES2017 引入了跟Object.keys配套的Object.values和Object.entries，作为遍历一个对象的补充手段，供for...of循环使用
+//let {keys, values, entries} = Object;
+//let obj = {a: 1, b: 2, c: 3};
+//for(let key of keys(obj)){
+//    console.log(key);
+//}
+//for(let value of values(obj)){
+//    console.log(value);
+//}
+//for(let [key, value] of entries(obj)){
+//    console.log([key, value]);
+//}
 
+//Object.values方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值
+//var obj = {foo: 'bar', baz: 42};
+//console.log(Object.values(obj));
+
+//返回数组的成员顺序--是按照数值大小，从小到大遍历的
+//var obj = {100: 'a', 2: 'b', 7: 'c'};
+//console.log(Object.values(obj));
+
+//Object.values只返回对象自身的可遍历属性
+//var obj = Object.create({}, {p: {value: 42, enumerable: true}});
+//console.log(Object.values(obj));
+
+//Object.values会过滤属性名为 Symbol 值的属性
+//var obj = {[Symbol()]: 123, foo: 'abc'};
+//console.log(Object.values(obj));
+
+//如果Object.values方法的参数是一个字符串，会返回各个字符组成的一个数组
+//console.log(Object.values('foo'));
+//console.log(Object.values(42));
+//console.log(Object.values(true));
+
+//Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组
+//var obj = {foo: 'bar', baz: 42};
+//console.log(Object.entries(obj));
+
+//如果原对象的属性名是一个 Symbol 值，该属性会被忽略
+//var obj = {[Symbol()]: 123, foo: 'abc'};
+//console.log(Object.entries(obj));
+
+//Object.entries的基本用途是遍历对象的属性
+//let obj = {one: 1, two: 2};
+//for(let [k, v] of Object.entries(obj)){
+//    console.log([k, v]);
+//}
+
+//Object.entries方法的另一个用处是，将对象转为真正的Map结构
+//var obj = {foo: 'bar', bar: 42};
+//var map = new Map(Object.entries(obj));
+//console.log(map);
+
+//自己实现Object.entries方法
+//Generator版本
+//function* entries(obj){
+//    for(let key of Object.keys(obj)){
+//        yield [key, obj[key]];
+//    }
+//}
+//非Generator版本
+//function entries(obj){
+//    let arr = [];
+//    for(let key of Object.keys(obj)){
+//        arr.push([key, obj[key]]);
+//    }
+//    return arr;
+//}
+
+//对象的扩展运算符
+//数组的扩展运算符（...）
+//const [a,...b] = [1, 2, 3];
+//console.log(a, b);
+
+//ES2017 将这个运算符引入了对象（...）
+//解构赋值
+//let {x, y, ...z} = {x: 1, y: 2, a: 3, b: 4};
+//console.log(x, y, z);
+
+//Object.getOwnPropertyDescriptors()
+//ES5 一个Object.getOwnPropertyDescriptor方法，返回某个对象属性的描述对象
+//var obj = {p: 'a'};
+//console.log(Object.getOwnPropertyDescriptor(obj, 'p'));
+
+//ES2017 引入了Object.getOwnPropertyDescriptors方法，返回指定对象所有自身属性（非继承属性）的描述对象
+//const obj = {
+//    foo: 123,
+//    get bar(){return 'abc'}
+//};
+//console.log(Object.getOwnPropertyDescriptors(obj));
+
+//Null传导运算符
+//编程实务中，如果读取对象内部的某个属性，往往需要判断一下该对象是否存在
+//const firstName = (message
+//    && message.body
+//    && message.body.user
+//    && message.body.user.firstName) || 'default';
+//const firstName = message?.body?.user?.firstName || 'default';
 
 
